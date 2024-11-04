@@ -104,9 +104,9 @@ vector<string> deckcode2cids(string s) {
 
 void parsedeck(string _s) {
     cin.clear();
-    //ÖØÖÃÊäÈëÁ÷£¬·ÀÖ¹ÎŞ·¨¶ÁÈ¡ 
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¹ï¿½Ş·ï¿½ï¿½ï¿½È¡ 
 
-    FILE* f = freopen((_s + "\\Logs\\decks.log").c_str(), "r", stdin);
+    FILE* f = freopen((_s + "\\decks.log").c_str(), "r", stdin);
 
     string line;
     string code;

@@ -193,9 +193,9 @@ vector<string> valids;
 
 state autoread(string _s, int& _tar, int& countslimit) {
 	cin.clear();
-	//ÖØÖÃÊäÈëÁ÷£¬·ÀÖ¹ÎŞ·¨¶ÁÈ¡ 
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¹ï¿½Ş·ï¿½ï¿½ï¿½È¡ 
 
-	FILE* f = freopen((_s + "\\Logs\\power.log").c_str(), "r", stdin);
+	FILE* f = freopen((_s + "\\power.log").c_str(), "r", stdin);
 
 	string __s;
 
@@ -217,7 +217,7 @@ state autoread(string _s, int& _tar, int& countslimit) {
 
 	fclose(stdin);
 
-	//½«Î¨Ò»ÓĞĞ§¶Î´æÖÁvalids£¬ÒÔÏÂ½ö¶ÔÕâ¶Î½øĞĞ¶ÁÈ¡
+	//ï¿½ï¿½Î¨Ò»ï¿½ï¿½Ğ§ï¿½Î´ï¿½ï¿½ï¿½validsï¿½ï¿½ï¿½ï¿½ï¿½Â½ï¿½ï¿½ï¿½ï¿½ï¿½Î½ï¿½ï¿½Ğ¶ï¿½È¡
 
 	int curid = 0;
 	string t, u, v, lu, lv;
@@ -291,7 +291,7 @@ state autoread(string _s, int& _tar, int& countslimit) {
 
 	valids.clear();
 
-	//¶ÁÈ¡Íê±Ï£¬¿ªÊ¼×ª»¯
+	//ï¿½ï¿½È¡ï¿½ï¿½Ï£ï¿½ï¿½ï¿½Ê¼×ªï¿½ï¿½
 
 	state autost = emptyst;
 	
@@ -516,7 +516,7 @@ state autoread(string _s, int& _tar, int& countslimit) {
 			}
 		}
 	}
-	//¶ÔÓÚÃ¿¸öÊÖÅÆÖĞµÄÍ¬Àà°ÂÃØ£¬·ÑÓÃ×îµÍµÄÒ»ÕÅÒÔÍâÊÓÎªÀ¬»ø£¬ÒÑ¾­ÔÚ°ÂÃØÇøÔò¾ùÊÓÎªÀ¬»ø£¨ÌáÇ°±ê¼Ç-999£©
+	//ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğµï¿½Í¬ï¿½ï¿½ï¿½ï¿½Ø£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½Ú°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½-999ï¿½ï¿½
 
 	autost.mana = atoi(id2tag2stampandvalue[myid]["RESOURCES"].second.c_str())
 		- atoi(id2tag2stampandvalue[myid]["RESOURCES_USED"].second.c_str())

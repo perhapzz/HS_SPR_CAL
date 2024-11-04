@@ -60,7 +60,7 @@ bool inrect(int x, int y, rect a) {
 }
 
 enum domt {
-	nodomt, vnx, vx, vn, cn, c0, cx, go, ans, lk, lk1, lk2, exa, vx0, gogo, lk2_1, lk0, adj
+	nodomt, vnx, vx, vn, cn, c0, cx, go, ans, lk, lk1, lk2, exa0, vx0, gogo, lk2_1, lk0, adj
 };
 struct domain {
 	rect r;
@@ -89,7 +89,7 @@ color_t txc = EGERGB(0, 0, 255);
 int H = 640;
 int W = 1280;
 
-string caption_s = "·«·«Ð¡ÌðÐÄ.20230104";
+string caption_s = "ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½ï¿½.20230104";
 
 void init() {
 	initgraph(W, H);
@@ -102,11 +102,11 @@ rect _start_cn = rectcons(1040, 560, 1160, 640);
 rect _start_en = rectcons(1160, 560, 1280, 640);
 
 void drawatt() {
-	textr(_all, txc, "ÄãÒÑ¾­ÔÄ¶Á¹ýhttps://github.com/Moiezen/HS_SPR_CAL/README.md£¬²¢ÇÒ¸ÃHSSPRCAL.exeÊÇÖ±½Ó»ñÈ¡µÄ×îÐÂ°æ±¾");
+	textr(_all, txc, "ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½https://github.com/Moiezen/HS_SPR_CAL/README.mdï¿½ï¿½ï¿½ï¿½ï¿½Ò¸ï¿½HSSPRCAL.exeï¿½ï¿½Ö±ï¿½Ó»ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½Â°æ±¾");
 
 	barr(_start_cn, bdc);
 	barr(cutedge(_start_cn, 1), bgc);
-	textr(_start_cn, txc, "ÖÐÎÄ");
+	textr(_start_cn, txc, "ï¿½ï¿½ï¿½ï¿½");
 
 	barr(_start_en, bdc);
 	barr(cutedge(_start_en, 1), bgc);
@@ -174,7 +174,7 @@ domain id2dom(int id) {
 
 string getdftlk() {
 	cin.clear();
-	//ÖØÖÃÊäÈëÁ÷£¬·ÀÖ¹ÎÞ·¨¶ÁÈ¡ 
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¹ï¿½Þ·ï¿½ï¿½ï¿½È¡ 
 
 	FILE* f = freopen("dft.txt", "r", stdin);
 
@@ -264,7 +264,7 @@ void getdoms() {
 	//45
 	rep(i, 0, 3) adddd(320 + 120 * i, 280, 440 + 120 * i, 320, vx, a1[i], 0, aurasdomid[i] = 46 + i, -1, alim[i]);
 	//46 ... 49
-	adddd(0, 600, 120, 640, exa, samp_s(), 0, exadomid = 50, -1, -1);
+	adddd(0, 600, 120, 640, exa0, samp_s(), 0, exadomid = 50, -1, -1);
 	//50
 	adddd(200, 120, 320, 160, vx, iceblock_s(), 0, icebdomid = 80, -1, 1);
 	//80
@@ -368,7 +368,7 @@ void drawdom(domain a, bool sl) {
 		case lk2:
 		case lk2_1:
 		case adj:
-		case exa: {
+		case exa0: {
 			textr(r, txc, a.name);
 			break;
 		}
@@ -385,7 +385,7 @@ void drawdom(domain a, bool sl) {
 			break;
 		}
 		case lk: {
-			textr(r, txc, a.name + "\\Logs\\power.log");
+			textr(r, txc, a.name + "\\power.log");
 			break;
 		}
 	}
@@ -529,8 +529,8 @@ void st2doms(state st) {
 	if (deckmn >= 10) {
 		deckmn = 10;
 	}
-	//autoreadµÃµ½µÄÅÆ¿âËæ´ÓÊµ¼ÊÉÏ¿ÉÄÜ³¬¹ý10
-	//ÔÚUI²¿·ÖÒÔ¼°Ö®ºóµÄ¼ÆËã²¿·Ö£¬ÔÝ½ö¿¼ÂÇ²»³¬¹ý10¸öÅÆ¿âËæ´Ó
+	//autoreadï¿½Ãµï¿½ï¿½ï¿½ï¿½Æ¿ï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½Ï¿ï¿½ï¿½Ü³ï¿½ï¿½ï¿½10
+	//ï¿½ï¿½UIï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½Ö®ï¿½ï¿½Ä¼ï¿½ï¿½ã²¿ï¿½Ö£ï¿½ï¿½Ý½ï¿½ï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½ï¿½10ï¿½ï¿½ï¿½Æ¿ï¿½ï¿½ï¿½ï¿½
 
 	rep(i, 0, deckmn - 1) {
 		tmp = id2dom(deckmdomid[i]);
@@ -753,9 +753,9 @@ void touch(domain toselect) {
 					)
 				)
 			   ) {
-				//ÔÚUIÉÏÒÑ¾­£º
-				//³ÁÄ¬µÄöèÓãÖ®Áé²»ÔÊÐí±»·ÅÖÃÔÚÊÖÅÆÎ»
-				//·ÇËæ´Ó²»ÔÊÐí±»·ÅÖÃÔÚËæ´ÓÎ»
+				//ï¿½ï¿½UIï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½ï¿½
+				//ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½é²»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»
+				//ï¿½ï¿½ï¿½ï¿½Ó²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»
 				inputing = false;
 				
 				selected.name = toselect.name;
@@ -855,7 +855,7 @@ void touch(domain toselect) {
 			inputing = false;
 
 			char _lk[105] = {};
-			inputbox_getline(hint_s().c_str(), "·«·«ÌðÌð", _lk, 100);
+			inputbox_getline(hint_s().c_str(), "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", _lk, 100);
 			domain tmp = id2dom(lkdomid);
 			tmp.name = _lk;
 			savedftlk(tmp.name);
@@ -891,7 +891,7 @@ void touch(domain toselect) {
 			selected = nodomain;
 			break;
 		}
-		case exa: {
+		case exa0: {
 			inputing = false;
 
 			loadsample();
@@ -933,13 +933,13 @@ void press(int k) {
 		k = selected.key - 100000;
 	}
 
-	//ÉÏÏÂ×óÓÒÌØÀý
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	if (k >= 96 && k <= 105) {
 		k = k - 48;
 	}
 
-	//Ð¡¼üÅÌÊý×Ö¼üÌØÀý
+	//Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	domain t = nodomain;
 	for (auto i : doms) {
@@ -976,7 +976,7 @@ void ui_main() {
 				k = getkey();
 			}
 			*/
-			//°´¼üÏûÏ¢²»ÐèÒªÊ¹ÓÃwhile¿ØÖÆÖÁ×îºó
+			//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ÒªÊ¹ï¿½ï¿½whileï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (k.msg == key_msg_down) {
 				press(k.key);
 				refresh;
